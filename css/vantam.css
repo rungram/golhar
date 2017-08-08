@@ -1,0 +1,23 @@
+/*
+ Sailor Bootstrap theme by BootstrapTaste.com
+ Theme URI: http://bootstraptaste.com/sailor-free-bootstrap-theme/
+ Author: BootstrapTaste
+ Author URI: http://bootstraptaste.com
+ */
+
+#hdbanner{
+	width:1200px;-moz-box-shadow:    15px 5px 5px 5px #333;
+  -webkit-box-shadow: 2px 5px 5px 5px #333;
+  box-shadow: 2px 5px 5px 5px #333;
+	height:140px !important;
+}
+.logo img{
+	margin-top: 25px !important;
+}
+.padding0 {
+    padding: 0;
+    padding-top: 25px !important;
+}
+
+
+/* Theme Styler :: End */
