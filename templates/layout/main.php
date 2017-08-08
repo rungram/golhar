@@ -96,7 +96,15 @@
             <div class="caption"> <?php echo $result_gt[0]["mota_vi"]?> </div>
           </div>
           <div class="col-lg-5">
-            <iframe class="video" width="80%" height="350px" src="https://www.youtube.com/embed/6058RADmttA" frameborder="1" allowfullscreen></iframe>
+          <?php 
+               global $d, $item;
+               $sql = "select * from #_video where hienthi='1' order by stt desc limit 1";
+               $d->query($sql);
+               $items = $d->result_array();
+            ?>
+            <?php for($i=0, $count=count($items); $i<$count; $i++){?>
+              <iframe class="video" width="80%" height="350px" src="https://www.youtube.com/embed/<?php echo $items[$i]['url'] ?>" frameborder="1" allowfullscreen></iframe>
+            <?php }?>
           </div>
         </div>
           

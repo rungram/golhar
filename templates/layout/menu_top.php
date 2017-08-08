@@ -1,6 +1,6 @@
 <?php
 	$d->reset();
-	$sql_list ="select *	from #_product_list order by stt asc limit 0,10";
+	$sql_list ="select *	from #_product_list where hienthi = 1 order by stt asc limit 0,10";
 	$d->query($sql_list);
 	$list =$d->result_array();
 ?>
@@ -17,7 +17,7 @@
           	<li	><a href="index.html">TRANG CHỦ</a></li>
             <?php for($i=0,$count_l=count($list);$i<$count_l;$i++){
 				$d->reset();
-				$sql_cat ="select *	from #_product_cat where id_list='".$list[$i]["id"]."' order by stt asc";
+				$sql_cat ="select *	from #_product_cat where id_list='".$list[$i]["id"]."' and hienthi = 1 order by stt asc";
 				$d->query($sql_cat);
 				$cat =$d->result_array();
 				$child = 'class="dropdown"';
@@ -73,6 +73,21 @@
 				</ul>
 			</li>
 			<?php }?>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" style="text-transform: uppercase;" data-close-others="false">Thư viện<i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                						     	<li>
+						<a href="thu-vien-cat/van-ban-11.html">VĂN BẢN</a>
+					</li>
+											     	<li>
+						<a href="chi-tiet-album-anh.html">ẢNH</a>
+					</li>
+											     	<li>
+						<a href="thu-vien-video.html">VIDEO CLIP</a>
+					</li>
+					                            </ul>				
+			
+			</li>
 			<li	class=""><a style="text-transform: uppercase;" href="lien-he.html">Liên hệ</a></li>
           </ul>
         </div>

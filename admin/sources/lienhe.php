@@ -16,12 +16,18 @@ switch($act){
 }
 
 function get_gioithieu(){
-	global $d, $item;
+	global $d, $items;
 
-	$sql = "select * from #_lienhe limit 0,1";
+	$sql = "select * from #_lienhe order by id asc";
 	$d->query($sql);
 	//if($d->num_rows()==0) transfer("Dữ liệu chưa khởi tạo.", "index.php");
-	$item = $d->fetch_array();
+	$items = $d->result_array();
+	$curPage = isset($_GET['curPage']) ? $_GET['curPage'] : 1;
+	$url="index.php?com=lienhe&act=capnhat";
+	$maxR=10;
+	$maxP=4;
+	$paging=paging($items, $url, $curPage, $maxR, $maxP);
+	$items=$paging['source'];
 }
 
 function save_gioithieu(){
