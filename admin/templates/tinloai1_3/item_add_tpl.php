@@ -92,6 +92,10 @@ function get_main_list()
 	<div>
 	 <textarea name="noidung_vi" id="noidung_vi"><?=$item['noidung_vi']?></textarea></div>
     <br /> 
+    <b>Nội dung </b><br/>
+	<div>
+	 <textarea name="noidung_en" id="noidung_en"><?=$item['noidung_en']?></textarea></div>
+    <br />
     
     <b>Số thứ tự</b> <input type="text" name="stt" value="<?=isset($item['stt'])?$item['stt']:1?>" style="width:30px"><br>
     <br />  

@@ -2,7 +2,7 @@
 	tinyMCE.init({
 		// General options
 		mode : "exact",
-        elements : "noidung_vi,noidung_en,noidung_cn,mota_vi",
+        elements : "noidung_vi,noidung_en,noidung_cn,mota_vi,mota_en",
 		theme : "advanced",
 		convert_urls : false,
 		plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,imagemanager,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,visualblocks",
@@ -64,7 +64,11 @@ height:"300px",
     <b>Mô tả ngắn </b> 
     <textarea name="mota_vi" cols="80" rows="5" ><?=$item['mota_vi']?>
     </textarea>
-    <br />   
+    <br />  
+    <b>Mô tả ngắn tiếng anh</b> 
+    <textarea name="mota_en" cols="80" rows="5" ><?=$item['mota_en']?>
+    </textarea>
+    <br />  
    
      
    <b>Nội dung </b><br/>
@@ -72,7 +76,11 @@ height:"300px",
 	 <textarea name="noidung_vi" id="noidung_vi"><?=$item['noidung_vi']?></textarea></div>
     <br /> 
     
-
+<b>Nội dung tiếng anh</b><br/>
+	<div>
+	 <textarea name="noidung_en" id="noidung_en"><?=$item['noidung_en']?></textarea></div>
+    <br /> 
+    
     <b>Số thứ tự</b> <input type="text" name="stt" value="<?=isset($item['stt'])?$item['stt']:1?>" style="width:30px"><br>
     <br />  
    	<b>Hiển thị</b> <input type="checkbox" name="hienthi" <?=(!isset($item['hienthi']) || $item['hienthi']==1)?'checked="checked"':''?>><br /> 

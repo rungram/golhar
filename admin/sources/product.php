@@ -261,7 +261,7 @@ function save_item(){
 		$data['id_item'] = (int)$_POST['id_item'];		
 		$data['id_catcat'] = (int)$_POST['id_catcat'];		
 		$data['ten_vi'] = $_POST['ten_vi'];
-		$data['ten_en'] = $_POST['ten_en'];
+		$data['ten_en'] = (!empty($_POST['ten_en']))?$_POST['ten_en']:$_POST['ten_vi'];
 		$data['ten_cn'] = $_POST['ten_cn'];
 		$data['soluong'] = $_POST['soluong'];
 		$data['baohanh'] = $_POST['baohanh'];
@@ -273,11 +273,11 @@ function save_item(){
 		$data['gia'] = (int)$_POST['gia'];		
 		$data['giagiam'] = (int)$_POST['giagiam'];				
 		$data['mota_vi'] = $_POST['mota_vi'];
-		$data['mota_en'] = $_POST['mota_en'];
+		$data['mota_en'] = (!empty($_POST['mota_en']))?$_POST['mota_en']:$_POST['mota_vi'];
 		$data['mota_cn'] = $_POST['mota_cn'];		
 		$data['thongso'] = $_POST['thongso'];		
-		$data['noidung_vi'] = $_POST['noidung_vi'];			
-		$data['noidung_en'] = $_POST['noidung_en'];	
+		$data['noidung_vi'] = $_POST['noidung_vi'];
+		$data['noidung_en'] = (!empty($_POST['noidung_en']))?$_POST['noidung_en']:$_POST['noidung_vi'];			
 		$data['noidung_cn'] = $_POST['noidung_cn'];									
 		$data['stt'] = $_POST['stt'];
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
@@ -302,7 +302,7 @@ function save_item(){
 		$data['id_item'] = (int)$_POST['id_item'];	
 		$data['id_catcat'] = (int)$_POST['id_catcat'];			
 		$data['ten_vi'] = $_POST['ten_vi'];
-		$data['ten_en'] = $_POST['ten_en'];
+		$data['ten_en'] = (!empty($_POST['ten_en']))?$_POST['ten_en']:$_POST['ten_vi'];
 		$data['ten_cn'] = $_POST['ten_cn'];
 		$data['soluong'] = $_POST['soluong'];
 		$data['baohanh'] = $_POST['baohanh'];
@@ -315,11 +315,11 @@ function save_item(){
 		$data['gia'] = (int)$_POST['gia'];	
 		$data['giagiam'] = (int)$_POST['giagiam'];					
 		$data['mota_vi'] = $_POST['mota_vi'];
-		$data['mota_en'] = $_POST['mota_en'];
+		$data['mota_en'] = (!empty($_POST['mota_en']))?$_POST['mota_en']:$_POST['mota_vi'];
 		$data['mota_cn'] = $_POST['mota_cn'];		
 		$data['thongso'] = $_POST['thongso'];		
 		$data['noidung_vi'] = $_POST['noidung_vi'];			
-		$data['noidung_en'] = $_POST['noidung_en'];	
+		$data['noidung_en'] = (!empty($_POST['noidung_en']))?$_POST['noidung_en']:$_POST['noidung_vi'];	
 		$data['noidung_cn'] = $_POST['noidung_cn'];	
 		$data['stt'] = $_POST['stt'];
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
@@ -510,9 +510,10 @@ function save_cat(){
 			}
 		}						
 		$data['ten_vi'] = $_POST['ten_vi'];
-		$data['ten_en'] = $_POST['ten_en'];
+		$data['ten_en'] = (!empty($_POST['ten_en']))?$_POST['ten_en']:$_POST['ten_vi'];
 		$data['ten_cn'] = $_POST['ten_cn'];
 		$data['mota_vi'] = $_POST['mota_vi'];
+		$data['mota_en'] = (!empty($_POST['mota_en']))?$_POST['mota_en']:$_POST['mota_vi'];
 		$data['tenkhongdau'] = changeTitle($_POST['ten_vi']);		
 		$data['id_list'] = $_POST['id_list'];			
 		$data['stt'] = $_POST['stt'];
@@ -536,8 +537,10 @@ function save_cat(){
 		}			
 		$data['id_list'] = $_POST['id_list'];
 		$data['ten_vi'] = $_POST['ten_vi'];
-		$data['ten_en'] = $_POST['ten_en'];
+		$data['ten_en'] = (!empty($_POST['ten_en']))?$_POST['ten_en']:$_POST['ten_vi'];
 		$data['ten_cn'] = $_POST['ten_cn'];
+		$data['mota_vi'] = $_POST['mota_vi'];
+		$data['mota_en'] = (!empty($_POST['mota_en']))?$_POST['mota_en']:$_POST['mota_vi'];
 		$data['tenkhongdau'] = changeTitle($_POST['ten_vi']);	
 		$data['stt'] = $_POST['stt'];
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
@@ -762,7 +765,7 @@ function get_list(){
 	$sql = "select * from #_product_list where id='".$id."'";
 	$d->query($sql);
 	if($d->num_rows()==0) transfer("Dữ liệu không có thực", "index.php?com=product&act=man_list");
-	$item = $d->fetch_array();	
+	$item = $d->fetch_array();
 }
 
 function save_list(){
@@ -772,7 +775,7 @@ function save_list(){
 	$id = isset($_POST['id']) ? themdau($_POST['id']) : "";
 	if($id){					
 		$data['ten_vi'] = $_POST['ten_vi'];
-		$data['ten_en'] = $_POST['ten_en'];
+		$data['ten_en'] = (!empty($_POST['ten_en']))?$_POST['ten_en']:$_POST['ten_vi'];
 		$data['ten_cn'] = $_POST['ten_cn'];
 		$data['noidung_vi'] = addslashes($_POST['noidung_vi']);
 		$data['tenkhongdau'] = changeTitle($_POST['ten_vi']);
@@ -780,6 +783,7 @@ function save_list(){
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
 		$data['ngaysua'] = time();
 		$data['mota_vi'] = $_POST['mota_vi'];
+		$data['mota_en'] = (!empty($_POST['mota_en']))?$_POST['mota_en']:$_POST['mota_vi'];
 		$d->setTable('product_list');
 		$d->setWhere('id', $id);
 		if($d->update($data))
@@ -788,13 +792,14 @@ function save_list(){
 			transfer("Cập nhật dữ liệu bị lỗi", "index.php?com=product&act=man_list");
 	}else{				
 		$data['ten_vi'] = $_POST['ten_vi'];
-		$data['ten_en'] = $_POST['ten_en'];
+		$data['ten_en'] = (!empty($_POST['ten_en']))?$_POST['ten_en']:$_POST['ten_vi'];
 		$data['ten_cn'] = $_POST['ten_cn'];
 		$data['tenkhongdau'] = changeTitle($_POST['ten_vi']);
 		$data['stt'] = $_POST['stt'];
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
 		$data['ngaytao'] = time();
 		$data['mota_vi'] = $_POST['mota_vi'];
+		$data['mota_en'] = (!empty($_POST['mota_en']))?$_POST['mota_en']:$_POST['mota_vi'];
 		$data['noidung_vi'] = addslashes($_POST['noidung_vi']);
 		$d->setTable('product_list');
 		if($d->insert($data))

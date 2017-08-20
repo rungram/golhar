@@ -245,13 +245,14 @@ function get_main_list22($id_mau)
  
     <br /><br />   
     <b>Tên sản phẩm</b> <input type="text" name="ten_vi" value="<?=$item['ten_vi']?>" class="input" /><br /> 
+    <b>Tên tiếng anh</b> <input type="text" name="ten_en" value="<?=$item['ten_en']?>" class="input" /><br /> 
     <b>Giá sản phẩm</b> <input type="text" name="gia"    value="<?=$item['gia']?>"    class="input" /><br />  
     <b>Giá khuyến mãi(nếu có)</b> <input type="text" name="giagiam"    value="<?=$item['giagiam']?>"    class="input" /><br />  
     <b>Mô tả ngắn </b> 
     <textarea name="mota_vi" cols="80" rows="5" ><?=$item['mota_vi']?>
     </textarea>
     <br />  
-    <b>Mô tả ngắn thêm</b> 
+    <b>Mô tả tiếng anh</b> 
     <textarea name="mota_en" cols="80" rows="5" ><?=$item['mota_en']?>
     </textarea>
     <br />     
@@ -260,11 +261,14 @@ function get_main_list22($id_mau)
 
     
     <br /><br /> 
-    <b>Thông số kỹ thuật </b><br/>
+    <b>Nội dung </b><br/>
 	<div>
 	 <textarea name="noidung_vi" id="noidung_vi"><?=$item['noidung_vi']?></textarea></div>
     <br /><br />  
-
+<b>Nội dung tiếng anh </b><br/>
+	<div>
+	 <textarea name="noidung_en" id="noidung_en"><?=$item['noidung_en']?></textarea></div>
+    <br /><br />  
     
     <b>Video hình</b> <input type="text" name="video_hinh" value="<?=$item['video_hinh']?>" class="input" /><br />
 (mã sau v= của youtube)  	<br /><br />
@@ -275,6 +279,7 @@ function get_main_list22($id_mau)
     <br /><br />  
     <b>Số thứ tự</b> <input type="text" name="stt" value="<?=isset($item['stt'])?$item['stt']:1?>" style="width:30px"><br>
     <br />  
+    
    	<b>Hiển thị</b> <input type="checkbox" name="hienthi" <?=(!isset($item['hienthi']) || $item['hienthi']==1)?'checked="checked"':''?>><br /> 
 	<input type="hidden" name="id" id="id" value="<?=@$item['id']?>" />
 	<input type="submit" value="Lưu" class="btn" />
