@@ -79,7 +79,7 @@ if($ngonngu == 'vn')
 <!-- end header -->
 <script language="javascript"> 
 function ngonngu(val){
-	document.cookie = "ngonngu="+val;
+	document.cookie = "ngonngu="+val+"; path=/";
 	location.reload();
 }
 </script>
@@ -163,7 +163,7 @@ else
 <!-- end header -->
 <script language="javascript"> 
 function ngonngu(val){
-	document.cookie = "ngonngu="+val;
+	document.cookie = "ngonngu="+val+"; path=/";
 	location.reload();
 }
 </script>
