@@ -24,7 +24,6 @@ function fns_Rand_digit($min,$max,$num)
 
 function get_gioithieu(){
 	global $d, $item;
-
 // 	$sql = "select * from #_gioithieu ";
 	$sql = "select * from #_product_list ";
 	$d->query($sql);

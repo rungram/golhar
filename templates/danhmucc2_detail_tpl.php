@@ -1,35 +1,35 @@
 <?php 
-            $id =  addslashes($_GET['id']);
-			$d->reset();
-			$sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id'  order by stt asc ";
-			$d->query($sql_tungdanhmuc);	
-			$result_spnam=$d->result_array();	
-			
-			$d->reset();
-			$sql_laycat="select * from #_product_cat where hienthi =1 and id='$id'";
-			$d->query($sql_laycat);	
-			$result_cat=$d->fetch_array();	
-			
-			$d->reset();
-			$sql_laylist="select * from #_product_list where hienthi =1 and id='".$result_cat['id_list']."'";
-			$d->query($sql_laylist);	
-			$result_laylist=$d->fetch_array();	
-			
-						
-			$curPage = isset($_GET['p']) ? $_GET['p'] : 1;
-			$url=getCurrentPageURL();
-			$maxR=15;
-			$maxP=5;
-			$paging=paging_home($result_spnam , $url, $curPage, $maxR, $maxP);
-			$result_spnam=$paging['source'];
-            
-			
-			$total_sp = count($result_spnam);
 			$ngonngu = (!empty($_COOKIE['ngonngu']))?$_COOKIE['ngonngu']:'vn';
         ?>
 <?php
 if($ngonngu == 'vn')
-{ 
+{
+    $id =  addslashes($_GET['id']);
+    $d->reset();
+    $sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id' and ( hienngonngu =3 or hienngonngu =1)  order by stt asc ";
+    $d->query($sql_tungdanhmuc);
+    $result_spnam=$d->result_array();
+    	
+    $d->reset();
+    $sql_laycat="select * from #_product_cat where hienthi =1 and id='$id'";
+    $d->query($sql_laycat);
+    $result_cat=$d->fetch_array();
+    	
+    $d->reset();
+    $sql_laylist="select * from #_product_list where hienthi =1 and id='".$result_cat['id_list']."'";
+    $d->query($sql_laylist);
+    $result_laylist=$d->fetch_array();
+    	
+    
+    $curPage = isset($_GET['p']) ? $_GET['p'] : 1;
+    $url=getCurrentPageURL();
+    $maxR=15;
+    $maxP=5;
+    $paging=paging_home($result_spnam , $url, $curPage, $maxR, $maxP);
+    $result_spnam=$paging['source'];
+    
+    	
+    $total_sp = count($result_spnam);
 ?>
 
 	<!-- start header -->
@@ -114,6 +114,32 @@ if($ngonngu == 'vn')
 }
 else 
 {
+    $id =  addslashes($_GET['id']);
+    $d->reset();
+    $sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id' and ( hienngonngu =3 or hienngonngu =2)  order by stt asc ";
+    $d->query($sql_tungdanhmuc);
+    $result_spnam=$d->result_array();
+     
+    $d->reset();
+    $sql_laycat="select * from #_product_cat where hienthi =1 and id='$id'";
+    $d->query($sql_laycat);
+    $result_cat=$d->fetch_array();
+     
+    $d->reset();
+    $sql_laylist="select * from #_product_list where hienthi =1 and id='".$result_cat['id_list']."'";
+    $d->query($sql_laylist);
+    $result_laylist=$d->fetch_array();
+     
+    
+    $curPage = isset($_GET['p']) ? $_GET['p'] : 1;
+    $url=getCurrentPageURL();
+    $maxR=15;
+    $maxP=5;
+    $paging=paging_home($result_spnam , $url, $curPage, $maxR, $maxP);
+    $result_spnam=$paging['source'];
+    
+     
+    $total_sp = count($result_spnam);
 ?> 
 <section id="content">
 

@@ -280,6 +280,7 @@ function save_item(){
 		$data['noidung_en'] = (!empty($_POST['noidung_en']))?$_POST['noidung_en']:$_POST['noidung_vi'];			
 		$data['noidung_cn'] = $_POST['noidung_cn'];									
 		$data['stt'] = $_POST['stt'];
+		$data['hienngonngu'] = (int)$_POST['hienngonngu'];	
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
 		$data['ngaysua'] = time();
 		$data['ngaytao'] = lay_thoigian();			
@@ -322,6 +323,7 @@ function save_item(){
 		$data['noidung_en'] = (!empty($_POST['noidung_en']))?$_POST['noidung_en']:$_POST['noidung_vi'];	
 		$data['noidung_cn'] = $_POST['noidung_cn'];	
 		$data['stt'] = $_POST['stt'];
+		$data['hienngonngu'] = (int)$_POST['hienngonngu'];
 		$data['hienthi'] = isset($_POST['hienthi']) ? 1 : 0;
 		$data['ngaytao'] = lay_thoigian();	
 		

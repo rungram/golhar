@@ -13,6 +13,14 @@
 	$sql_slider = "select ten,photo,link from #_slideshow order by stt asc";
 	$d->query($sql_slider);
 	$result_slider=$d->result_array();
+	
+	$d->reset();
+	$sql_slider = "select * from #_tinloai2_1a limit 1";
+	$d->query($sql_slider);
+	$result_gioithieu=$d->fetch_array();
+	$gioithieu = $result_gioithieu['mota_vi'];
+	$gioithieuen = $result_gioithieu['mota_en'];
+	
 	$ngonngu = (!empty($_COOKIE['ngonngu']))?$_COOKIE['ngonngu']:'vn';
 ?>
 <?php
@@ -69,7 +77,7 @@ if($ngonngu == 'vn')
 		<div class="marquee" style="width:100%">
 		<div >
 			<marquee direction="right" behavior="alternate" style="width:100%;" >
-			Kính chào quý khách đến với website Công Ty TNHH Phân Bón Golhar
+			<?=$gioithieu?>
 			</marquee>
 		</div>
 		</div>
@@ -153,7 +161,7 @@ else
 		<div class="marquee" style="width:100%">
 		<div >
 			<marquee direction="right" behavior="alternate" style="width:100%;" >
-			Welcom to website TNHH Phân Bón Golhar company
+			<?=$gioithieuen?>
 			</marquee>
 		</div>
 		</div>
