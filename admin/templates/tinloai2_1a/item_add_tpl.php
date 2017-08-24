@@ -58,7 +58,8 @@ height:"300px",
 	<?php }?>
 	<b>Hình ảnh:</b> <input type="file" name="file" /> <?=_tinloai2_1_type?><br />
     <br />
-    <b>Tên tuyển dụng</b> <input type="text" name="ten_vi" value="<?=$item['ten_vi']?>" class="input" /><br />   
+    <b>Header</b> <input type="text" name="ten_vi" value="<?=$item['ten_vi']?>" class="input" /><br /> 
+    <b>Header tiếng anh </b> <input type="text" name="ten_en" value="<?=$item['ten_en']?>" class="input" /><br />   
     
    
     <b>Mô tả ngắn </b> 

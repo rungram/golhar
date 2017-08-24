@@ -133,7 +133,7 @@ if($ngonngu == 'vn')
 		   $result_list=$d->fetch_array();
            $url = $result_list["ten_cn"].'-cat/'.$cat[$j]["tenkhongdau"].'-'.$cat[$j]["id"].'.html';
            $d->reset();
-           $sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id_cat'  order by stt asc limit 1";
+           $sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id_cat'  order by stt desc limit 1";
            $d->query($sql_tungdanhmuc);
            $result_spnam=$d->result_array();
           ?>
@@ -243,7 +243,7 @@ else
 		   $result_list=$d->fetch_array();
            $url = $result_list["ten_cn"].'-cat/'.$cat[$j]["tenkhongdau"].'-'.$cat[$j]["id"].'.html';
            $d->reset();
-           $sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id_cat'  order by stt asc limit 1";
+           $sql_tungdanhmuc="select * from #_product where hienthi =1 and id_cat='$id_cat'  order by stt desc limit 1";
            $d->query($sql_tungdanhmuc);
            $result_spnam=$d->result_array();
           ?>

@@ -18,8 +18,8 @@
 	$sql_slider = "select * from #_tinloai2_1a limit 1";
 	$d->query($sql_slider);
 	$result_gioithieu=$d->fetch_array();
-	$gioithieu = $result_gioithieu['mota_vi'];
-	$gioithieuen = $result_gioithieu['mota_en'];
+	$gioithieu = $result_gioithieu['ten_vi'];
+	$gioithieuen = $result_gioithieu['ten_en'];
 	
 	$ngonngu = (!empty($_COOKIE['ngonngu']))?$_COOKIE['ngonngu']:'vn';
 ?>
